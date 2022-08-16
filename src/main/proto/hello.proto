@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.example";
+option java_outer_classname = "HelloGrpcProto";
+
+package hello;
+
+service ProductGrpc {
+  rpc CreateProduct (CreateProductRequest) returns (CreateProductResponse) {}
+  rpc GetProduct (GetProductRequest) returns (GetProductResponse) {}
+}
+
+message CreateProductRequest {
+  string message = 1;
+}
+
+message CreateProductResponse {
+  string id = 1;
+  string message = 2;
+}
+
+message GetProductRequest {
+  string id = 1;
+}
+
+message GetProductResponse {
+  string id = 1;
+  string message = 2;
+}
